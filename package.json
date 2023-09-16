@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@aldra-consulting/typescript-config",
+  "version": "0.0.0",
+  "description": "Shareable and extendable TypeScript configuration.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aldra-consulting/typescript-config.git"
+  },
+  "contributors": [
+    {
+      "name": "Alexander Zakharov (azaxarov)",
+      "email": "alexander.zakharov@aldra.no"
+    }
+  ],
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "scripts": {
+    "commit": "cz",
+    "lint": "run-p lint:eslint",
+    "lint:eslint": "eslint --ext json .",
+    "lint:eslint:fix": "eslint --ext json . --fix",
+    "lint:eslint:staged:fix": "eslint --ext json . --fix",
+    "lint:fix": "run-p lint:eslint:fix",
+    "lint:staged:fix": "run-p lint:eslint:staged:fix -- {@}",
+    "prepare": "husky install",
+    "prepublishOnly": "cp -R src/*.json ."
+  },
+  "files": [
+    "common.json",
+    "node.json",
+    "browser.json",
+    "react.json"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
+    "semantic-release": "^21.1.2"
+  }
+}
